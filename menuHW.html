@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --bottom-height: 40vw;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .button {
+        font-size: 1.5rem;
+        background: rgba(0, 0, 255, 0.84);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        display: none;
+      }
+      .button:hover {
+        background: rgba(0, 0, 255, 0.445);
+      }
+      @media (max-width: 768px) {
+        .button {
+          display: inline;
+        }
+        p {
+          font-size: 1.2rem;
+          line-height: 1.5;
+          text-align: justify;
+          padding: 0 10px;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      .bottom {
+        background: silver;
+        width: 100%;
+        height: var(--bottom-height);
+        position: fixed;
+        bottom: 0;
+        transform: translateY(calc(var(--bottom-height) * 1));
+        transition: all 0.5s ease-out;
+      }
+      .bottom--open {
+        transform: translateY(0);
+      }
+      .menu_content {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>About company</h1>
+
+      <button class="button" onclick="toggleMenu()">Menu</button>
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi eius
+      molestias perferendis totam eos fugit tenetur qui nostrum quas labore
+      laudantium sed, laborum necessitatibus error repellendus ea voluptatibus
+      placeat quidem laboriosam? Dolor nihil aut inventore incidunt ut
+      consequatur possimus illum deserunt quam qui aliquam eaque voluptatum
+      perspiciatis voluptates nobis, sapiente eius consectetur repudiandae eum
+      officiis quae modi totam aspernatur! Repellat aut harum, eius soluta, sunt
+      ut officia impedit maiores quidem est enim necessitatibus sed, eligendi
+      odio! Nihil dignissimos in neque, odio ipsa provident dolorem corrupti
+      praesentium! Libero, deleniti iusto! Quos libero nemo dolore. Eveniet,
+      incidunt ut minus commodi iure dolores. Labore, obcaecati quia! Cumque
+      rerum assumenda ipsam consectetur. Aliquid enim dolorem perspiciatis
+      voluptas accusamus consequuntur fugiat ex sunt recusandae aut eligendi
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
+      nesciunt commodi perspiciatis suscipit non maiores quisquam consectetur
+      totam dicta adipisci fugiat at sed cumque unde voluptatem? Eius animi
+      repellat porro laudantium facilis tempore harum, quod blanditiis
+      voluptatem repudiandae, id recusandae quisquam eum, ipsam corrupti
+      expedita incidunt in eos! Voluptas at sunt cumque modi rem nemo cum
+      quibusdam, dolorum architecto porro ipsam eveniet sed odit libero quae
+      deleniti aut est aliquid neque ducimus, necessitatibus, dolorem rerum.
+      Adipisci dignissimos maxime eveniet eligendi nulla voluptates, perferendis
+      reiciendis voluptatem repellat repellendus id illum culpa autem omnis nisi
+      sunt quae veniam voluptate numquam velit cum.
+    </p>
+    <div class="menu">
+      <script>
+        function toggleMenu() {
+          let sidebar = document.querySelector(".sidebar");
+
+          sidebar.classList.toggle("sidebar--open");
+        }
+      </script>
+      <footer class="bottom"></footer>
+      <script>
+        function toggleMenu() {
+          let sidebar = document.querySelector(".bottom");
+
+          sidebar.classList.toggle("bottom--open");
+        }
+      </script>
+      <div class="menu_content">
+        <h3>Home</h3>
+        <h3>Catalog</h3>
+        <h3>Profile</h3>
+      </div>
+    </div>
+  </body>
+</html>

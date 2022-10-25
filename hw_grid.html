@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body,
+        .wrapper {
+            height: 100%;
+            background: gray;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns:200px 200px 200px 200px ;
+            grid-template-rows:150px 150px 150px ;
+            grid-template-areas: 
+            "aside header header bannertop"
+            "aside main1 main2 banner"
+            "aside main3 main4 banner"
+            ;
+            gap: 10px;
+        }
+
+        .header {
+         grid-area: header;   
+         background: greenyellow;
+        }
+        .aside {
+            grid-area: aside;
+            background: greenyellow;
+        }
+        .banner {
+            grid-area: banner;
+            background: greenyellow;
+        }
+        .bannertop {
+            grid-area: bannertop;
+            background: red;
+        }
+        .main1 {
+            grid-area: main1;
+            background: yellow;
+        }
+        .main2 {
+            grid-area: main2;
+            background: red;
+        }
+        .main3 {
+            grid-area: main3;
+            background: red;
+        }
+        .main4 {
+            grid-area: main4;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="aside"></div>
+        <div class="banner"></div>
+        <div class="bannertop"></div>
+        <div class="main1"></div>
+        <div class="main2"></div>
+        <div class="main3"></div>
+        <div class="main4"></div>
+    </div>
+</body>
+</html>

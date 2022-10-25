@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: black;
+    }
+.wrapper {
+    background: rgb(218, 212, 212);
+    width: 1145px ;
+    height: 400px;
+    position: absolute;
+    top: 137px;
+    bottom: 0px;
+    left: 160px;
+    right: 0;
+    border: 30px solid rgb(218, 212, 212);
+    outline: 30px solid white;
+    display: flex;
+
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+
+    gap: 12px;
+}
+
+.left{
+    flex: 4;
+    background: coral;
+
+}
+
+.right{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+   
+}
+.right-2{
+    height: 50%;
+    background: greenyellow;
+
+}
+
+.right-bottom{
+    display: flex;
+    height: 50%;
+    gap: 25px;
+}
+
+.right-3{
+    background: rgb(244, 153, 198);
+    width: 50%;
+}
+
+.right-4 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.right-4a{
+    height: 50%;
+    background: rgb(63, 154, 193);
+}
+
+.right-4b{
+    height: 50%;
+    background: rgb(63, 154, 193);
+
+}
+.left,
+.right-2,
+.right-3,
+.right-4a,
+.right-4b{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<body>
+    <div class="wrapper">
+        
+        <div class="left">1</div>
+        <div class="right">
+            <div class="right-2">2</div>
+            <div class="right-bottom">
+                <div class="right-3">3</div>
+                <div class="right-4">
+                    <div class="right-4a">4a</div>
+                    <div class="right-4b">4b</div>
+ 
+            </div>
+           
+        </div>
+       
+        </div>
+       
+
+
+    </div>
+   
+</body>
+</html>

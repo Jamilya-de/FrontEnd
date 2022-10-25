@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Finti</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+      :root {
+        --sidebar-width: 250px;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .sidebar {
+        background: #f7f7fe;
+        width: var(--sidebar-width);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-right: solid;
+        border-color: rgba(128, 128, 128, 0.242);
+      }
+      .logo {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        font-size: 30px;
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+      .logotext {
+        font-size: 15px;
+        padding-top: 6px;
+        padding-left: 10px;
+        display: flex;
+      }
+      h4 {
+        padding: 20px 30px 0px 30px;
+      }
+      .text {
+        font-size: 13px;
+        padding-top: 6px;
+        padding-left: 10px;
+      }
+      .navlogo {
+        font-size: 25px;
+      }
+      .navicon {
+        float: right;
+        font-size: 15px;
+        padding-left: 75px;
+        padding-top: 6px;
+      }
+      .fugure {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .banner {
+        width: 95%;
+        height: 250px;
+        position: absolute;
+        text-align: center;
+        border-radius: 20px;
+        background: linear-gradient(110deg, #f6eee4 40%, #e1e0f2 50%);
+        padding-top: 50px;
+      }
+      .question {
+        width: 60px;
+        height: 60px;
+        background: orange;
+        border: 20px solid white;
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+      }
+
+      main {
+        width: calc(100% - 15%);
+        display: flex;
+        flex-direction: column;
+        
+      }
+      .input {
+        border: none;
+        font-size: 16px;
+        border-radius: 8px;
+      }
+      input:focus {
+        outline: none;
+      }
+
+      .search {
+        display: flex;
+        justify-content: start;
+        background: white;
+        width: 300px;
+        border-radius: 8px;
+        padding-left: 15px;
+      }
+      .icon {
+        font-size: 20px;
+        color: gray;
+      }
+
+      .header {
+        height: 190px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 10px 30px;
+        align-items: baseline;
+      }
+      .wrapper {
+        display: flex;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        height: 250px;
+        margin: -80px 20px 0px 20px;
+      }
+      .left {
+        background: blue;
+        flex: 1;
+        border-radius: 20px;
+      }
+      .middle {
+        background: red;
+        flex: 1;
+        border-radius: 20px;
+      }
+      .right {
+        background: green;
+        flex: 1;
+        border-radius: 20px;
+      }
+      .grafic {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: -40px 20px 0px 20px;
+      }
+      .bottom {
+        display: flex;
+        gap: 20px;
+      }
+      .left-bottom {
+        background: lightblue;
+        width: 70%;
+        height: 300px;
+        margin-left: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-radius: 8px;
+      }
+      .right-bottom {
+        background: white;
+        width: 30%;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="lab la-artstation"></i>
+        <div class="logotext">Super Finti</div>
+      </div>
+
+      <nav class="navigation">
+        <h4>Main Navigation</h4>
+
+        <div class="logo">
+          <span class="navlogo"><i class="las la-icons"></i></span>
+          <div class="text"><pre>Dashboard   </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>Transaktions</pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-address-book"></i></span>
+          <div class="text"><pre>Contacts    </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>Feuteres    </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-address-book"></i></span>
+          <div class="text">Library</div>
+        </div>
+
+        <h4>Settings & Schedules</h4>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>Base Wallet </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>My Contacts </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>Invoices    </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+        <div class="logo">
+          <span class="navlogo"><i class="las la-server"></i></span>
+          <div class="text"><pre>Schedules   </pre></div>
+          <span class="navicon"><i class="las la-angle-right"></i></span>
+        </div>
+      </nav>
+      <div class="figure">
+        <div class="banner">
+          <div class="question">
+            <h2>?</h2>
+          </div>
+          <div class="helpcenter">
+            <div class="textbanner">
+              <p>
+                Having trouble in Finti.<br />Please contact us for more
+                questions.
+              </p>
+            </div>
+            <div class="button">
+              <a href="#">Go To Help Center</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="header">
+        <div class="search">
+          <span class="icon">
+            <i class="las la-search-4x"></i>
+          </span>
+          <input class="input" type="text" placeholder="Search.." />
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <section class="top">
+          <div class="left">1</div>
+          <div class="middle">2</div>
+          <div class="right">3</div>
+        </section>
+        <section class="grafic">4</section>
+        <section class="bottom">
+          <div class="left-bottom">
+            <h3 class="title">Title</h3>
+            <div class="button">
+              <button>+</button>
+              <button>-</button>
+            </div>
+          </div>
+          <div class="right-bottom">6</div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

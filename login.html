@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+      html,
+      body,
+      .wrapper {
+        height: 100%;
+      }
+      .wrapper {
+        display: flex;
+      }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+      }
+      .form-container {
+        background: linear-gradient(0deg,#141728fe 48%,#96637b 65%, #e9b891 70%, #938aae 80%);
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .banner {
+        background: grey;
+        flex: 1;
+      }
+      .form {
+        text-align: center;
+        background: linear-gradient(#141728fe,#96637b, #938aae);
+        padding: 40px 20px;
+        border-radius: 16px;
+      }
+      .row {
+        margin-bottom: 20px;
+      }
+
+      .text {
+        color: white;
+      }
+      .input {
+        border: none;
+        font-size: 16px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      .input:focus {
+        outline: none;
+      }
+      .button {
+        font-size: 16px;
+        background: #ed732e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+      }
+      figure {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .picture {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-container">
+        <div class="form">
+          <div class="logo"><a title="Xiaomi, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Xiaomi_logo_(2021-).svg"><img width="50" alt="Xiaomi logo (2021-)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/512px-Xiaomi_logo_%282021-%29.svg.png"></a> </div>
+          <div class="row">
+            <h1 class="text">Welcome</h1>
+          </div>
+          <div class="row">
+            <input type="text" class="input" placeholder="Email" />
+          </div>
+          <div class="row">
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <div class="row">
+            <buton class="button">Login</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner">
+        <figure>
+            <img class="picture" src="https://images.unsplash.com/photo-1662948099967-820a793a8013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80" alt="">
+        </figure>
+      </div>
+    </div>
+  </body>
+</html>

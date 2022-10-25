@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@500;600;700&display=swap");
+      :root {
+        --sidebar-width: 250px;
+      }
+      body {
+        font-family: "Cabin", sans-serif;
+        font-weight: 700;
+        background: white;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      p {
+        color: grey;
+        font-size: 12px;
+      }
+      .sidebar {
+        background: #e5e4f37b;
+        width: var(--sidebar-width);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        border-right: solid;
+        border-color: rgba(128, 128, 128, 0.242);
+      }
+      .logo {
+        color: #4f4598;
+        width: 100%;
+        height: 35px;
+        display: flex;
+        font-size: 27px;
+        padding-top: 20px;
+        padding-left: 20px;
+      }
+      .logotext {
+        font-size: 14px;
+        padding-top: 6px;
+        padding-left: 10px;
+      }
+      .nav_title {
+        font-size: 13px;
+        padding: 30px 30px 0px 30px;
+      }
+      .nav_links {
+        font-size: 13px;
+        padding: 10px 20px 0 20px;
+        list-style: none;
+      }
+      .nav_text {
+        color: grey;
+      }
+
+      .nav_link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #4f4598;
+      }
+      .nav_main {
+        display: flex;
+        align-items: center;
+      }
+      .nav_icon {
+        font-size: 25px;
+        padding-right: 10px;
+      }
+      .banner {
+        width: 70%;
+        height: 180px;
+        border-radius: 20px;
+        background: linear-gradient(
+          110deg,
+          #f6eee4 40%,
+          rgba(176, 118, 230, 0.108) 50%
+        );
+        margin: 20px 10px 5px 35px;
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .banner_logo {
+        width: 40px;
+        height: 40px;
+        font-weight: 400;
+        color: white;
+        background: #ff7b00;
+        font-size: 15px;
+        border: 10px solid white;
+        border-radius: 50%;
+        text-align: center;
+        margin-top: -20px;
+        margin-bottom: 20px;
+      }
+      .banner_text {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 11px;
+      }
+      button {
+        border-radius: 10px;
+        border: 10px solid white;
+        background: white;
+      }
+      .banner_button {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 10px;
+      }
+
+      main {
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        background: #e5e4f37b;
+        height: 230px;
+      }
+      .search {
+        width: 250px;
+        margin: 20px 40px;
+        display: flex;
+        align-items: center;
+      }
+      .search_icon {
+        background: white;
+        font-size: 15.5px;
+        border: 15px solid white;
+        border-radius: 5px 0 0 5px;
+      }
+      .input {
+        width: 100%;
+        border: 17px solid white;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 0 5px 5px 0;
+        margin-left: -15px;
+      }
+
+      .header_icon1,
+      .header_icon2,
+      .header_icon3 {
+        text-decoration: none;
+        font-size: 25px;
+        margin-right: 15px;
+      }
+
+      .header_text {
+        list-style: none;
+      }
+      .header_wallet,
+      .header_invoice {
+        text-decoration: none;
+        margin-right: 35px;
+        font-size: 15px;
+      }
+      .avatar {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+      }
+      .avatar_icon {
+        font-size: 35px;
+        padding-left: 10px;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: -180px;
+        padding: 50px 50px 20px 50px;
+        gap: 20px;
+      }
+      .card1,
+      .card2,
+      .card3 {
+        height: 180px;
+        width: 340px;
+        border-radius: 20px;
+        list-style: none;
+      }
+      .card1 {
+        background: linear-gradient(130deg, #f9ecd6 30%, #d4d6f9 60%);
+      }
+
+      .card_content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .card1_header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .card1_main {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .card2 {
+        background: linear-gradient(120deg, #fceed0 30%, #fae2ed 60%);
+      }
+      .card2_header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .card2_question {
+        text-decoration: none;
+        color: #fae2ed;
+        background: rgba(163, 161, 161, 0.756);
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border-radius: 50%;
+      }
+      .card2_main {
+        display: flex;
+        align-items: center;
+      }
+      .card2_icon {
+        font-size: 40px;
+        width: 80px;
+        height: 70px;
+        border-radius: 50%;
+        color: #ea3e2d;
+        background: #f8d7cd;
+        text-align: center;
+        padding: 10px;
+        margin-right: 20px;
+      }
+
+      .card2_number {
+        color: #ea3e2d;
+      }
+      .card3 {
+        background: linear-gradient(70deg, #d4f6c0 30%, #eefdeb 40%);
+      }
+      .card3_header {
+        display: flex;
+        flex-direction: column;
+      }
+      .card3_icon {
+        font-size: 40px;
+        margin-top: -15px;
+      }
+      .card3_main {
+        display: flex;
+        justify-content: space-between;
+      }
+      .roboto {
+        font-family: "Roboto", sans-serif;
+        font-size: 8px;
+      }
+      figure {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: solid gray;
+        border-bottom: solid gray;
+        height: 100px;
+        margin: 0 50px 0 50px;
+      }
+      .grafic {
+        display: flex;
+        align-items: center;
+      }
+      .gr_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .gr_number {
+        display: flex;
+        justify-content: space-between;
+      }
+      .gr1_number1 {
+        color: #ea3e2d;
+        padding-right: 20px;
+      }
+      .gr1_number2 {
+        background: #a3eecc;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .gr2_number1 {
+        color: #4f459a;
+        padding-right: 20px;
+      }
+      .gr2_number2 {
+        color: #4f459a;
+        background: #dddaeb;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .gr3_number1 {
+        color: #68dbbf;
+      }
+      .gr3_number2 {
+        color: #68dbbf;
+        background: #def8f3;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .gr_icon {
+        width: 140px;
+        height: 75px;
+      }
+      footer {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin: 15px 50px 0 50px;
+      }
+      .left-bottom {
+        flex: 2;
+        background: #fbfbff;
+        height: 295px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+      }
+      .button_search,
+      .button_slider {
+        background-color: #fbfbff;
+        border: solid #fbfbff;
+        font-size: 18px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .footer_main,
+      .footer_ts {
+        list-style: none;
+      }
+      .footer_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .transfer {
+        display: flex;
+        align-items: center;
+      }
+      .transfer_icon {
+        font-size: 30px;
+        padding-right: 10px;
+      }
+      .transfer_text {
+        font-size: 14px;
+        color: rgb(84, 84, 84);
+      }
+      .sum,
+      .sum2 {
+        font-size: 14px;
+        color: #d93829;
+      }
+      .sum2 {
+        color: black;
+      }
+      .right-bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .ts_content {
+        display: flex;
+        justify-content: space-between;
+      }
+      .transactions {
+        display: flex;
+      }
+      .ts_icon1,
+      .ts_icon2,
+      .ts_icon3,
+      .ts_icon4 {
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-right: 10px;
+        color: white;
+      }
+      .ts_icon1 {
+        background: #3429ae;
+      }
+      .ts_icon2 {
+        background: #eb536b;
+      }
+      .ts_icon3 {
+        background: #418ff6;
+      }
+      .ts_icon4 {
+        background: #f3b24b;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <i class="lab la-artstation"></i>
+        <div class="logotext">Super Finti</div>
+      </div>
+      <nav class="nav">
+        <h4 class="nav_title">Main Navigation</h4>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-icons"></i>
+                </span>
+                <span class="nav_text"> Dashboard </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-border-none"></i>
+                </span>
+                <span class="nav_text"> Transaktions </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-address-book"></i>
+                </span>
+                <span class="nav_text"> Contacts </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-server"></i>
+                </span>
+                <span class="nav_text"> Features </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-school"></i>
+                </span>
+                <span class="nav_text"> Library </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <h4 class="nav_title">Settings & Schedules</h4>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-wallet"></i>
+                </span>
+                <span class="nav_text"> Base Wallet </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-address-card"></i>
+                </span>
+                <span class="nav_text"> My Contacts </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-file-invoice-dollar"></i>
+                </span>
+                <span class="nav_text"> Invoices </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav_links">
+          <li class="nav_item">
+            <a class="nav_link" href="">
+              <div class="nav_main">
+                <span class="nav_icon">
+                  <i class="las la-calendar"></i>
+                </span>
+                <span class="nav_text"> Schedules </span>
+              </div>
+
+              <span class="nav_arrow">
+                <i class="las la-angle-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <section class="banner">
+        <div class="banner_logo">?</div>
+        <h5 class="banner_header">Help Center</h5>
+        <p class="banner_text">
+          Having trouble in Finti.<br />Please contact us for more quesions.
+        </p>
+        <button>
+          <a class="banner_button" href="">Go To Help Center</a>
+        </button>
+      </section>
+    </aside>
+    <main>
+      <header>
+        <div class="search">
+          <span class="search_icon">
+            <i class="las la-search"></i>
+          </span>
+          <input class="input" type="text" placeholder="Search.." />
+        </div>
+        <div class="header_icon">
+          <a class="header_icon1" href="">
+            <i class="las la-file"></i>
+          </a>
+          <a class="header_icon2" href="">
+            <i class="las la-inbox"></i>
+          </a>
+          <a class="header_icon3" href="">
+            <i class="las la-ellipsis-v"></i>
+          </a>
+        </div>
+        <ul class="header_text">
+          <li class="text">
+            <a class="header_wallet" href="">Wallet</a>
+            <a class="header_invoice" href="">Invoice</a>
+          </li>
+        </ul>
+        <div class="avatar">
+          <h4>Hi, Shakir</h4>
+          <a class="avatar_icon" href="">
+            <i class="las la-user-circle"></i>
+          </a>
+        </div>
+      </header>
+      <div class="wrapper">
+        <ul class="card1">
+          <li class="card_content">
+            <div class="card1_header">
+              <h5 class="card_text">Your Working Balance</h5>
+              <a class="subtitle" href=""><h5>Saving Account</h5></a>
+            </div>
+            <span class="card1_main">
+              <h1>PKR 9,250,000</h1>
+              <h6>PKR ^</h6>
+            </span>
+          </li>
+        </ul>
+        <ul class="card2">
+          <li class="card_content">
+            <div class="card2_header">
+              <h5 class="card_text">Your Saving Status</h5>
+              <a class="card2_question" href="">?</a>
+            </div>
+            <span class="card2_main">
+              <div class="card2_icon">
+                <i class="las la-cube"></i>
+              </div>
+              <div class="card2_subtitle">
+                <h2 class="card2_number">4.28%</h2>
+                <h5 class="card2_text">Your spending increased</h5>
+              </div>
+            </span>
+          </li>
+        </ul>
+        <ul class="card3">
+          <li class="card_content">
+            <div class="card3_header">
+              <span class="card3_icon">
+                <i class="lab la-cc-mastercard"></i>
+              </span>
+              <p class="roboto">CARD NUMBER</p>
+              <h2 class="IBAN">3829 4820 4629 5025</h2>
+            </div>
+            <div class="card3_main">
+              <span class="card3_holder">
+                <p class="roboto">CARD HOLDER NAME</p>
+                <h5>Anita Rose</h5>
+              </span>
+              <span class="card3_vaid">
+                <p class="roboto">VAID THRU</p>
+                <h5>09/17</h5>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <figure>
+        <div class="grafic">
+          <span class="gr_text">
+            <p class="gr_title">Tasks in Progress</p>
+            <div class="gr_number">
+              <h2 class="gr1_number1">210</h2>
+              <p class="gr1_number2">
+                23
+                <i class="las la-arrow-up"></i>
+              </p>
+            </div>
+
+            <p class="gr_subtitle">Current Month</p>
+          </span>
+          <img
+            class="gr_icon"
+            src="https://cdn-icons-png.flaticon.com/512/38/38795.png"
+            alt=""
+          />
+        </div>
+        <div class="grafic">
+          <span class="gr_text">
+            <p class="gr_title">Task Completed</p>
+            <div class="gr_number">
+              <h2 class="gr2_number1">185</h2>
+              <p class="gr2_number2">
+                45
+                <i class="las la-arrow-up"></i>
+              </p>
+            </div>
+
+            <p class="gr_subtitle">Current Month</p>
+          </span>
+          <img
+            class="gr_icon"
+            src="https://cdn-icons-png.flaticon.com/512/38/38795.png"
+            alt=""
+          />
+        </div>
+        <div class="grafic">
+          <span class="gr_text">
+            <p class="gr_title">Monthly Tasks Summary</p>
+            <div class="gr_number">
+              <h2 class="gr3_number1">1.240</h2>
+              <p class="gr3_number2">
+                145
+                <i class="las la-arrow-up"></i>
+              </p>
+            </div>
+
+            <p class="gr_subtitle">Current Month</p>
+          </span>
+          <img
+            class="gr_icon"
+            src="https://cdn-icons-png.flaticon.com/512/38/38795.png"
+            alt=""
+          />
+        </div>
+      </figure>
+      <footer>
+        <div class="left-bottom">
+          <section class="row">
+            <h4>Latest Transaktions</h4>
+            <div class="buttons">
+              <button class="button_search">
+                <i class="las la-search"></i>
+              </button>
+              <button class="button_slider">
+                <i class="las la-sliders-h"></i>
+              </button>
+            </div>
+          </section>
+          <p>Mon, Mar 1</p>
+          <ul class="footer_main">
+            <li class="footer_content">
+              <section class="transfer">
+                <span class="transfer_icon">
+                  <i class="las la-arrow-circle-right"></i>
+                </span>
+                <span class="transfer_text"> Payment Sent to Shakir </span>
+              </section>
+
+              <section class="sum">$560.00</section>
+            </li>
+            <li class="footer_content">
+              <section class="transfer">
+                <span class="transfer_icon">
+                  <i class="las la-arrow-alt-circle-left"></i>
+                </span>
+                <span class="transfer_text">Salary from Redwhale</span>
+              </section>
+
+              <section class="sum2">$12,200.00</section>
+            </li>
+            <li class="footer_content">
+              <section class="transfer">
+                <span class="transfer_icon">
+                  <i class="las la-arrow-circle-right"></i>
+                </span>
+                <span class="transfer_text">Money Sent to Wise.com</span>
+              </section>
+
+              <section class="sum">$3,000.00</section>
+            </li>
+          </ul>
+          <p>Mon, Mar 1</p>
+          <ul class="footer_main">
+            <li class="footer_content">
+              <section class="transfer">
+                <span class="transfer_icon">
+                  <i class="las la-arrow-circle-right"></i>
+                </span>
+                <span class="transfer_text">Purchased Macbook Pro</span>
+              </section>
+
+              <section class="sum">$5560.00</section>
+            </li>
+          </ul>
+        </div>
+        <div class="right-bottom">
+          <section class="row">
+            <h4>Upcoming Transactions</h4>
+            <p>Viev All</p>
+          </section>
+          <p>Today</p>
+          <ul class="footer_ts">
+            <li class="ts_content">
+              <section class="transactions">
+                <span class="ts_icon1">
+                  <i class="las la-tint"></i>
+                </span>
+                <div class="ts_title">
+                  <span class="transfer_text">Water Bill</span>
+                  <p>Unsuccessfully</p>
+                </div>
+              </section>
+              <section class="sum">-$280</section>
+            </li>
+          </ul>
+          <p>Tomorrow</p>
+          <ul class="footer_ts">
+            <li class="ts_content">
+              <section class="transactions">
+                <span class="ts_icon2">
+                  <i class="las la-dollar-sign"></i>
+                </span>
+                <div class="ts_title">
+                  <span class="transfer_text">Income: Salary Oct</span>
+                  <p>Successfuly</p>
+                </div>
+              </section>
+
+              <section class="sum2">+$1200</section>
+            </li>
+          </ul>
+          <ul class="footer_ts">
+            <li class="ts_content">
+              <section class="transactions">
+                <span class="ts_icon3">
+                  <i class="las la-bolt"></i>
+                </span>
+                <div class="ts_title">
+                  <span class="transfer_text">Electric Bill</span>
+                  <p>Successfully</p>
+                </div>
+              </section>
+
+              <section class="sum">- $480</section>
+            </li>
+          </ul>
+          <ul class="footer_ts">
+            <li class="ts_content">
+              <section class="transactions">
+                <span class="ts_icon4">
+                  <i class="lab la-elementor"></i>
+                </span>
+                <div class="ts_title">
+                  <span class="transfer_text">Income: Jane transfers</span>
+                  <p>Successfully</p>
+                </div>
+              </section>
+
+              <section class="sum2">+ $500</section>
+            </li>
+          </ul>
+          <ul class="footer_ts">
+            <li class="ts_content">
+              <section class="transactions">
+                <span class="ts_icon4">
+                  <i class="lab la-elementor"></i>
+                </span>
+                <div class="ts_title">
+                  <span class="transfer_text">Income: Jane transfers</span>
+                  <p>Succesfully</p>
+                </div>
+              </section>
+
+              <section class="sum2">+ $500</section>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

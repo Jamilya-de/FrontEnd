@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <style>
+      :root {
+        --sidebar-width: 50vw;
+    
+      }
+      .sidebar {
+        background: gold;
+        height: 100%;
+        width: var(--sidebar-width);
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(calc(var(--sidebar-width) * -1));
+        transition: all 0.5s ease-out;
+        z-index: 1;
+      }
+      .sidebar--open {
+        transform: translateX(0);
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .button {
+        font-size: 1.5rem;
+        background: rgba(0, 0, 255, 0.84);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        display: none;
+      }
+      .button:hover {
+        background: rgba(0, 0, 255, 0.445);
+      }
+      @media (max-width: 768px) {
+        .button {
+          display: inline;
+        }
+        p {
+          font-size: 1.2rem;
+          line-height: 1.5;
+          text-align: justify;
+          padding: 0 10px;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 768px){
+     .menu_content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: gray;
+      border-radius: 8px;
+      height: 15vw;
+      width: 86%;
+      position: fixed;
+      bottom: 0;
+      padding: 20px;
+    
+     }
+     }
+     .home,
+     .catalog,
+     .profile {
+      text-decoration: none;
+      color: white;
+     }
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar"></aside>
+
+    <div class="header">
+      <h1>About company</h1>
+
+      <button class="button" onclick="toggleMenu()">Menu</button>
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi eius
+      molestias perferendis totam eos fugit tenetur qui nostrum quas labore
+      laudantium sed, laborum necessitatibus error repellendus ea voluptatibus
+      placeat quidem laboriosam? Dolor nihil aut inventore incidunt ut
+      consequatur possimus illum deserunt quam qui aliquam eaque voluptatum
+      perspiciatis voluptates nobis, sapiente eius consectetur repudiandae eum
+      officiis quae modi totam aspernatur! Repellat aut harum, eius soluta, sunt
+      ut officia impedit maiores quidem est enim necessitatibus sed, eligendi
+      odio! Nihil dignissimos in neque, odio ipsa provident dolorem corrupti
+      praesentium! Libero, deleniti iusto! Quos libero nemo dolore. Eveniet,
+      incidunt ut minus commodi iure dolores. Labore, obcaecati quia! Cumque
+      rerum assumenda ipsam consectetur. Aliquid enim dolorem perspiciatis
+      voluptas accusamus consequuntur fugiat ex sunt recusandae aut eligendi
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae porro, error accusantium consectetur excepturi consequatur, quam laboriosam sequi quas magni minima necessitatibus qui dolorem rem at tempore maxime, reprehenderit ea atque et laudantium harum! Nemo maxime tempore sit cupiditate laborum, aliquid distinctio minima, molestiae reiciendis omnis cum consectetur necessitatibus harum unde dolorum aliquam enim ab. Doloremque explicabo inventore iste culpa consequatur maxime modi tempora possimus incidunt. Eveniet hic velit fugit vel dolores aliquid illum cumque consectetur, maxime voluptates libero similique incidunt adipisci, vitae natus nisi pariatur dicta dolorum, suscipit provident nulla. Qui sint dolor, hic, commodi harum fugit, assumenda maiores adipisci odit facilis tempore consectetur eos? Quisquam eveniet accusantium sint. Inventore, eveniet libero sapiente ullam cum ut tempora sunt non quas autem impedit tenetur dolores perspiciatis a commodi repellendus? Architecto ipsum, eius quisquam laboriosam quaerat quam voluptatem facilis neque, natus facere aperiam exercitationem ad minus provident ullam molestias maiores iusto voluptates non vitae necessitatibus amet mollitia. Corporis pariatur tempora ut fuga nisi at dolorum esse voluptatibus optio non facilis accusantium dolores vel, necessitatibus porro alias veritatis mollitia maiores earum voluptates, sunt atque commodi voluptas. Accusamus atque iusto excepturi, cupiditate voluptatum cumque totam tenetur neque, dolores placeat fuga, nemo quaerat ex.
+    </p>
+
+    <div class="menu_content">
+      <a class="home" href="#">Home</a>
+      <a class="catalog" href="#">Catalog</a>
+      <a class="profile" href="#">Profile</a>
+
+     </div>
+
+    <script>
+      function toggleMenu() {
+        let sidebar = document.querySelector(".sidebar");
+
+        sidebar.classList.toggle("sidebar--open");
+      }
+    </script>
+    
+  </body>
+</html>
