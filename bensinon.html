@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bensinon</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body,
+        .wrapper {
+            height: 100%;
+        }
+        .wrapper {
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:1fr 2fr 1fr ;
+            grid-template-areas: 
+            " header header header"
+            "main1 main2 main2"
+            "footer1 footer2 footer3"
+            ;
+            gap: 10px;
+        }
+        .header {
+         grid-area: header;   
+         background: greenyellow;
+        }
+        
+        .main1 {
+            grid-area: main1;
+            background: yellow;
+        }
+        .main2 {
+            grid-area: main2;
+            background: red;
+        }
+        .footer1 {
+            grid-area: footer1;
+            background: red;
+        }
+        .footer2 {
+            grid-area: footer2;
+            background: yellow;
+        }
+        .footer3 {
+            grid-area: footer3;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="main1"></div>
+        <div class="main2"></div>
+        <div class="footer1"></div>
+        <div class="footer2"></div>
+        <div class="footer3"></div>
+
+    </div>
+</body>
+</html>
