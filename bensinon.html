@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bensinon</title>
     <link
-    rel="stylesheet"
-    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-  />
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
       * {
         margin: 0;
         padding: 0;
@@ -20,6 +20,7 @@
       body,
       .wrapper {
         height: 100%;
+        background: whitesmoke;
       }
       .wrapper {
         display: grid;
@@ -27,66 +28,74 @@
         grid-template-rows: 1fr 2fr 1fr;
         grid-template-areas:
           " header header header"
-          "main1 main2 main2"
-          "footer1 footer2 footer3";
+          "main1 main1 main1"
+          "footer footer footer";
         gap: 10px;
       }
       .header {
         grid-area: header;
-        background: greenyellow;
+        background: whitesmoke;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 40px;
       }
 
       .main1 {
         grid-area: main1;
         background: yellow;
       }
-      .main2 {
-        grid-area: main2;
+
+      .footer {
+        grid-area: footer;
         background: red;
       }
-      .footer1 {
-        grid-area: footer1;
-        background: red;
-      }
-      .footer2 {
-        grid-area: footer2;
-        background: yellow;
-      }
-      .footer3 {
-        grid-area: footer3;
-        background: red;
-      }
-      .header {
+
+      .logo {
         display: flex;
         justify-content: space-between;
+        width: 8%;
+      }
+      .icon {
+        font-size: 25px;
       }
       .header_menu {
         display: flex;
-        
+        justify-content: space-between;
+        width: 40%;
       }
+      button {
+        height: 40px;
+      }
+      .main1 {
+        display: flex;
+        justify-content: space-between;
+      }
+      
     </style>
   </head>
   <body>
     <div class="wrapper">
       <div class="header">
         <div class="logo">
-            <i class="lab la-blogger-b"></i>
-            <div class="logotext">bensinon</div>
-          </div>
-          <div class="header_menu">
-            <h4 class="home">Home</h4>
-            <h4 class="feature">Feature</h4>
-            <h4 class="Screen">Screen</h4>
-            <h4 class="pricing">Pricing</h4>
-            <h4 class="question">Question</h4>
-            <button class="button">Get Started</button>
-          </div>
+          <div class="icon"><i class="lab la-blogger-b"></i></div>
+          <div class="logotext"><h2>bensinon</h2></div>
+        </div>
+        <div class="header_menu">
+          <h4 class="home">Home</h4>
+          <h4 class="feature">Feature</h4>
+          <h4 class="Screen">Screen</h4>
+          <h4 class="pricing">Pricing</h4>
+          <h4 class="question">Question</h4>
+          <button class="button">Get Started</button>
+        </div>
       </div>
-      <div class="main1"></div>
-      <div class="main2"></div>
-      <div class="footer1"></div>
-      <div class="footer2"></div>
-      <div class="footer3"></div>
+      <div class="main1">
+        <div class="main_content">
+          <h1>Main content</h1>
+        </div>
+        <img src="https://via.placeholder.com/300x150" alt="" />
+      </div>
+      <div class="footer"></div>
     </div>
   </body>
 </html>
