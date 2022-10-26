@@ -70,6 +70,32 @@
         display: flex;
         justify-content: space-between;
       }
+      .main_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box1,
+      .box2,
+      .box3 {
+        background: whitesmoke;
+        border: solid grey;
+        width: 30%;
+        height: 90%;
+      }
+
+      @media (max-width: 768px) {
+
+        .header_menu {
+          display: none;
+          width: 30%;
+        }
+      }
       
     </style>
   </head>
@@ -91,11 +117,27 @@
       </div>
       <div class="main1">
         <div class="main_content">
-          <h1>Main content</h1>
+          <h1>Refueling a car at your adress</h1>
+          <p>Delivery service for all types of fuel for your car</p>
+          <div class="main_button">
+            <button class="app_store">App Store</button>
+            <button class="google">Google Play</button>
+          </div>
+          <div class="social_media">
+            <a href="instagram"><i class="lab la-instagram"></i></a>
+            <a href="facebook"><i class="lab la-facebook"></i></a>
+            <a href="telegram"><i class="lab la-telegram"></i></a>
+          </div>
+        
+         
         </div>
         <img src="https://via.placeholder.com/300x150" alt="" />
       </div>
-      <div class="footer"></div>
+      <div class="footer">
+        <section class="box1"> </section>
+        <section class="box2"></section>
+        <section class="box3"></section>
+      </div>
     </div>
   </body>
 </html>
