@@ -25,7 +25,7 @@
       .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-rows: 0.5fr 2fr 1fr;
         grid-template-areas:
           " header header header"
           "main1 main1 main1"
@@ -37,17 +37,21 @@
         background: whitesmoke;
         display: flex;
         justify-content: space-between;
-        padding: 30px 40px;
+        padding: 30px 40px 30px 50px;
+        align-items: baseline;
+      }
+      .header_menu {
+        margin-left: 30%;
       }
 
       .main1 {
         grid-area: main1;
-        background: yellow;
+        background: whitesmoke;
       }
 
       .footer {
         grid-area: footer;
-        background: red;
+        background: whitesmoke;
       }
 
       .logo {
@@ -62,40 +66,141 @@
         display: flex;
         justify-content: space-between;
         width: 40%;
+        align-items: baseline;
       }
-      button {
+      .header_button {
         height: 40px;
+        width: 100px;
+        background: rgb(70, 178, 144);
+        border: none;
+        border-radius: 20px;
+        font-size: 12px;
+        color: white;
       }
       .main1 {
         display: flex;
         justify-content: space-between;
+        padding-right: 30px;
       }
       .main_content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 30px;
+        padding: 0 30px 30px 50px;
+      }
+      img {
+        right: 30px;
+        width: 80%;
       }
       .footer {
         display: flex;
         justify-content: space-between;
+        padding: 0 30px 0 50px;
       }
       .box1,
       .box2,
       .box3 {
-        background: whitesmoke;
-        border: solid grey;
+        background: white;
         width: 30%;
         height: 90%;
+        padding: 30px;
+      }
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 12px;
+        color: grey;
+      }
+      .main_button {
+        display: flex;
+      }
+      .app_store,
+      .google {
+        display: flex;
+        align-items: center;
+        background: black;
+        border-radius: 19px;
+        width: 110px;
+        height: 35px;
+        margin-right: 5px;
+      }
+
+      .icon_app,
+      .icon_google {
+        font-size: 18px;
+        border: 1px solid white;
+        border-radius: 50%;
+        color: white;
+      }
+      .text_app,
+      .text_google {
+        text-decoration: none;
+        padding-left: 5px;
+      }
+      .subtitle_app {
+        font-size: 8px;
+        color: white;
+      }
+      .title_app,
+      .title_google {
+        font-size: 12px;
+        color: white;
+      }
+      .social_media {
+        font-size: 15px;
+      }
+      .instagram,
+      .facebook,
+      .telegram {
+        border: 1px solid black;
+        border-radius: 50%;
+        color: black;
+        margin-right: 5px;
+      }
+
+
+      .icon_box1,
+      .icon_box2,
+      .icon_box3 {
+        font-size: 40px;
+      }
+      .icon_box1 {
+        color: rgb(64, 85, 170);
+      }
+      .icon_box2 {
+        color:  rgb(70, 178, 144);
+      }
+      .icon_box3 {
+        color: rgb(64, 85, 170);
+      }
+      .subtitle_f {
+        padding-top: 10px;
       }
 
       @media (max-width: 768px) {
-
         .header_menu {
           display: none;
           width: 30%;
         }
+        
+      .main1 {
+        display: flex;
+        flex-direction: column;
       }
+      h1 {
+        font-size: 40px;
+      }
+      .main_button,
+      .social_media {
+        padding-top: 10px;
+      }
+      img {
+        padding-left: 50px;
+        width: 100%;
+      }
+        }
       
     </style>
   </head>
@@ -112,31 +217,66 @@
           <h4 class="Screen">Screen</h4>
           <h4 class="pricing">Pricing</h4>
           <h4 class="question">Question</h4>
-          <button class="button">Get Started</button>
+          
         </div>
+        <button class="header_button">Get Started</button>
       </div>
       <div class="main1">
         <div class="main_content">
-          <h1>Refueling a car at your adress</h1>
+          <h1>
+            Refueling a 
+            car at your
+            adress
+          </h1>
           <p>Delivery service for all types of fuel for your car</p>
           <div class="main_button">
-            <button class="app_store">App Store</button>
-            <button class="google">Google Play</button>
+            <button class="app_store">
+              <a class="icon_app" href="#">
+                <i class="lab la-apple"></i>
+              </a>
+              <a class="text_app" href="#">
+                <p class="subtitle_app">Android on the</p>
+                <p class="title_app">App Store</p>
+              </a>
+            </button>
+            <button class="google">
+              <a class="icon_google" href="#">
+                <i class="lab la-google-play"></i>
+              </a>
+              <a class="text_google" href="#">
+                <p class="subtitle_app">Android on the</p>
+                <p class="title_google">Google play</p>
+              </a>
+            </button>
           </div>
           <div class="social_media">
-            <a href="instagram"><i class="lab la-instagram"></i></a>
-            <a href="facebook"><i class="lab la-facebook"></i></a>
-            <a href="telegram"><i class="lab la-telegram"></i></a>
+            <a class="instagram" href="#"><i class="lab la-instagram"></i></a>
+            <a class="facebook" href="#"><i class="lab la-facebook-f"></i></a>
+            <a class="telegram" href="#"><i class="lab la-telegram"></i></a>
           </div>
-        
-         
         </div>
-        <img src="https://via.placeholder.com/300x150" alt="" />
+        <img src="https://via.placeholder.com/500x180" alt="" />
       </div>
       <div class="footer">
-        <section class="box1"> </section>
-        <section class="box2"></section>
-        <section class="box3"></section>
+        <section class="box1">
+          <span class="icon_box1"><i class="las la-clock"></i></span>
+          <h4 class="title_f">Specified order</h4>
+          <p class="subtitle_f">
+            Refueling your car at the time and date your specify
+          </p>
+        </section>
+        <section class="box2">
+          <span class="icon_box2"><i class="las la-map-marker-alt"></i></span>
+          <h4 class="title_f">Delivery</h4>
+          <p class="subtitle_f">
+            Refueling is carried out anxwhere in the city
+          </p>
+        </section>
+        <section class="box3">
+          <span class="icon_box3"><i class="las la-credit-card"></i></span>
+          <h4 class="title_f">Payment types</h4>
+          <p class="subtitle_f">Make a payment in any way convenient for you</p>
+        </section>
       </div>
     </div>
   </body>
