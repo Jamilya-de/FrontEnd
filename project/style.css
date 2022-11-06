@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ABeeZee", sans-serif;
+}
+
+.velozar {
+  height: 100vh;
+  background: #f4f9e2;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 118px 320px 150px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #000000;
+}
+
+nav ul a:hover {
+  border-bottom: 1px solid #000;
+}
+
+.velozar button {
+  padding: 17px 40px;
+  background: #f9b640;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 17px;
+  font-style: italic;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.velozar button:hover {
+  transform: scale(1.2);
+}
+.velozar_main {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "content_main dino"
+    "Content_main dino";
+}
+.content_main {
+  grid-area: content_main;
+  color: #22356f;
+  padding: 80px;
+}
+.dino {
+  grid-area: dino;
+  padding-left: 80px;
+}
+.title_main {
+  font-size: 40px;
+  font-style: italic;
+}
+.inf_main {
+  padding-top: 40px;
+  font-size: 22px;
+  line-height: 2;
+}
+
+.service {
+  height: 100vh;
+  background: #62d0df;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "content bike";
+}
+.service_content {
+  grid-area: content;
+  padding: 170px;
+  color: white;
+  font-size: 24px;
+  font-style: italic;
+}
+.service_title {
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+.inf_service {
+  text-align: justify;
+  line-height: 1.5;
+}
+.bike {
+  grid-area: bike;
+  height: 100vh;
+}
+.content {
+  height: 100vh;
+  font-style: italic;
+  font-size: 24px;
+}
+.inf_content {
+  padding: 300px 300px 300px 390px;
+  color: #22356f;
+}
+.p_first {
+  padding-bottom: 30px;
+}
+
+.properties {
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "nav1 nav2 nav3";
+}
+.maintenance {
+  grid-area: nav1;
+  background: #22356f;
+}
+.alignment {
+  grid-area: nav2;
+  background: #0052c1;
+}
+.setting {
+  grid-area: nav3;
+  background: #76b58b;
+}
+
+.maintenance,
+.alignment,
+.setting {
+  padding: 100px 60px;
+  font-size: 32px;
+  color: white;
+  font-style: italic;
+  text-decoration: none;
+}
+hr {
+  margin-bottom: 30px;
+  color: white;
+}
+.rent {
+  height: 100vh;
+  color: #22356f;
+  display: flex;
+}
+.rent_content {
+  padding: 200px 80px;
+  font-size: 36px;
+  font-style: italic;
+}
+.rent_title {
+  padding-bottom: 50px;
+}
