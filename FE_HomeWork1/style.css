@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+.wrapper {
+    height: 100%;
+    background-color: gray;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+  "menu header header header header"
+  "main main main main main"
+  "content block block block footer";
+}
+
+.menu {
+  grid-area: menu;
+ background-color: tomato;
+}
+
+.header {
+  grid-area: header;
+ background-color: olive;
+}
+
+.content {
+  grid-area: content;
+  background-color: orange;
+  
+}
+
+.main {
+  grid-area: main;
+  background-color: aqua;
+  
+}
+
+.footer {
+  grid-area: footer;
+  background-color: blueviolet;
+  
+}
+
+.block {
+  grid-area: block;
+  background-color: yellow;
+ 
+}
+
+
+

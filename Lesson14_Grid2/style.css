@@ -1,0 +1,44 @@
+.item {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr;
+  gap: 5px;
+}
+.container {
+  display: grid;
+ 
+}
+.element {
+    background-color: lightcoral;
+}
+.element:nth-child(1){
+    order: 1;
+}
+.element:nth-child(2){
+    order: 2;
+}
+.element:nth-child(3){
+    order: 3;
+}
+.element:nth-child(4){
+    order: 4;
+}
+.element:nth-child(5){
+    order: 5;
+}
+.element:nth-child(6){
+    order: 6;
+}
+.element:nth-child(7){
+    order: 7;
+}
+.element:nth-child(8){
+    order: 8;
+}
+.element:nth-child(9){
+    order: 9;
+}
+.element:nth-child(10){
+    order: 10;
+}
+
